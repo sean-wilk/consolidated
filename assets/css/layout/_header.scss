@@ -1,0 +1,446 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+/*************************************
+ ** Menu Typography
+ *************************************/
+
+ // Menu Button Styling
+
+html body li.menu-btn  a {
+ display: block;
+ padding: 8px 12px;
+ background-color: $primary-color;
+ transition: $btn-fade-animation;
+
+ &::after {
+	 display: none;
+ }
+
+ &:hover {
+	 background-color: $primary-color-50;
+ }
+}
+
+ul.menu {
+	list-style: none;
+ 	margin: 0;
+ 	padding-left: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 16px;
+
+	li a {
+		position: relative;
+		font-size: 1.25rem;
+		font-family: $text-font-stack;
+		font-weight: 700;
+		letter-spacing: $header-letter-spacing;
+		color: $white;
+		padding: 8px 0;
+		margin-right: 24px;
+
+		@include link-hover-animation();
+
+		&.menu-btn {
+			display: block;
+			padding: 8px 12px;
+			background-color: $primary-color;
+			transition: $btn-fade-animation;
+
+			&::after {
+				display: none;
+			}
+
+			&:hover::after {
+				background-color: $primary-color-50;
+			}
+		}
+	}
+}
+
+ul.menu li ul a {
+	font-size: 1rem;
+	font-family: $text-font-stack;
+	color: $white;
+	text-transform: uppercase;
+
+	&:hover {
+		color: $white-70;
+		text-decoration: underline !important;
+	}
+}
+
+/*************************************
+ ** WordPress Admin CSS
+ *************************************/
+
+@media all and (min-width: map-get($breakpoints, admin-bar)) {
+	.admin-bar #site-navigation {
+		top: 32px;
+	}
+}
+
+@media all and (max-width: map-get($breakpoints, admin-bar) - 1) {
+	.admin-bar #site-navigation {
+		top: 46px;
+
+		&.admin-bar-hidden {
+			top: 0px;
+		}
+	}
+}
+
+/*************************************
+ ** Navigation Styling
+ *************************************/
+
+.skip-link {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: -1;
+	 color: $white;
+	 opacity: 0;
+ }
+
+#site-navigation {
+	width: 100%;
+	background-color: $transparent;
+	position: static;
+	top:0;
+	z-index: 99999 !important;
+	transition: background-color 200ms linear;
+
+	.navigation-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: no-wrap;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+	}
+
+	/* Logo Styling */
+	.site-branding {
+
+		.logo-container {
+			a {
+				height: 50px !important;
+			}
+
+			img {
+			  margin-left: 0;
+			}
+
+			#go-logo-dark {
+				display: none;
+			}
+
+			#go-logo {
+				display: block;
+			}
+		}
+	}
+
+	.site-branding .logo-container img {
+	    height: 50px;
+	    width: auto;
+	    margin-left: 24px;
+	}
+
+	/* Desktop Menu Styling */
+	.site-menu {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		align-content: center;
+		padding: 0 0 0 32px;
+
+		a {
+			cursor: pointer;
+		}
+
+		/* Main Menu & Dropdown Styling */
+		.desktop-menu {
+			flex-grow: 2;
+
+			div {
+				width: 100%;
+			}
+
+			li {
+				float: left;
+				position: relative;
+			}
+
+			a {
+				display: block;
+				text-decoration: none;
+			}
+
+			ul {
+
+        li:hover > ul {
+          right: 0;
+        }
+
+				ul {
+					background-color: $primary-color;
+          color: $white;
+					background-position: top right;
+					background-repeat: no-repeat;
+					background-size: contain;
+					float: left;
+					position: absolute;
+					right: -999em;
+					z-index: 99998;
+          padding: 16px;
+          list-style: none !important;
+
+					ul {
+						right: -999em;
+					}
+
+					li.focus > ul, li:hover > ul {
+						right: 100%;
+						left: auto;
+            top: -16px;
+					}
+
+					a {
+						min-width: 200px;
+					}
+				}
+			}
+		}
+
+		/* Header Widgets Section */
+		#header-widget-area {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: center;
+			align-content: center;
+			margin: 0 0 0 16px;
+
+			> div {
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-items: center;
+				justify-content: center;
+				align-content: center;
+				padding: 2px;
+			}
+
+			.hw-widget .textwidget * {
+				margin: 0;
+				text-decoration: none;
+			}
+		}
+	}
+
+	/* Mobile Menu Section */
+	.mobile-menu-right {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		align-items: center;
+
+		.hamburger {
+			margin-right: 0;
+			.hamburger-inner  {
+			  transition: none;
+			}
+		}
+
+		#menu-toggle-container {
+			padding-right: 32px;
+			height: 20px;
+		}
+
+		.slicknav_menu {
+			display: none;
+		}
+	}
+
+	/* Miscellaneous Fixes */
+	.container::before, .container::after {
+	  display: none;
+	}
+}
+
+/*************************************
+ ** Desktop Specific Styling
+ *************************************/
+
+@media screen and (min-width: map-get($breakpoints, desktop)) {
+
+	.hamburger {
+		display: none !important;
+	}
+
+	#site-navigation {
+		height: map-get($header-height, desktop);
+
+		.navigation-container {
+			height: map-get($header-height, desktop);
+		}
+
+		#menu-toggle,
+		#menu-toggle-container {
+			display: none;
+		}
+
+		#mobile-header-widget-area {
+			display: none;
+		}
+		.mobile-menu {
+			display: none !important;
+		}
+	}
+
+	header .site-menu ul li:last-child a {
+		margin-right: 0;
+	}
+}
+
+/*************************************
+ ** Mobile Device Styling
+ *************************************/
+
+@media screen and (max-width: map-get($breakpoints, desktop) - 1px) {
+
+	#primary {
+		padding-top: map-get($header-height, mobile);
+	}
+
+	.page-template-template-home #primary {
+		padding-top: 0;
+	}
+
+	#content {
+		padding-top: map-get($header-height, mobile);
+	}
+
+	#site-navigation {
+		height: map-get($header-height, mobile);
+		background-color: rgba(0,0,0,0.5);
+		position: fixed;
+
+		&.dropdown {
+			background-color: $background-color;
+		}
+
+		&.scrolled {
+			position: fixed;
+		}
+
+		.navigation-container {
+			height: map-get($header-height, mobile);
+		}
+
+		.desktop-menu ul {
+			li a {
+				line-height: map-get($header-height, mobile);
+			}
+
+			ul {
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		.site-branding {
+			flex-grow: 2;
+
+			.logo-container img {
+				height: 32px;
+				width: auto;
+				margin: 8px 0px;
+			}
+		}
+
+		#menu-toggle-container {
+			flex-grow: 2;
+			padding: 0 32px 0 104px;
+
+			#menu-toggle {
+				float: right;
+				text-decoration: none;
+				font-size: 24px;
+				line-height: 59px;
+				display: inline-block;
+				cursor: pointer;
+				z-index: 1001;
+			}
+		}
+
+		.menu-link {
+			display: inline-block;
+		}
+		.navigation-container .site-menu {
+			.desktop-menu, .social-icons, #primary-menu, #header-widget-area {
+				display: none;
+			}
+
+			.mobile-menu {
+				position: absolute;
+				display: block;
+				top: -9999px;
+				left: 0;
+				width: 100vw;
+				background-color: $primary-color;
+
+				#mobile-menu {
+					list-style-type: none !important;
+					list-style: none !important;
+					margin: 16px 0;
+          justify-content: center;
+          padding: 16px;
+
+					li {
+						padding: 8px 0;
+
+            &:last-child a {
+              margin-right: 0;
+            }
+					}
+				}
+			}
+
+			.mobile-menu.dropdown {
+				top: map-get($header-height, mobile);
+			}
+		}
+
+	}
+}
+
+@media only screen and (max-width:map-get($breakpoints, tablet) - 1px) {
+	.site-menu {
+		padding: 0 32px;
+	}
+}
+
+@media only screen and (max-width: 380px) {
+	#site-navigation {
+		.features-cta-button {
+			flex-grow: 2;
+			padding: 15px 16px;
+		}
+
+		#menu-toggle-container {
+			padding-right: 16px;
+		}
+
+		.site-branding .custom-logo {
+			margin: 17px 0 17px 24px;
+		}
+	}
+}

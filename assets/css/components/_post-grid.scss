@@ -1,0 +1,206 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for the post grid component
+// -----------------------------------------------------------------------------
+
+html .grid-item-link {
+  display: block;
+  margin: 8px;
+  width:  calc(33.33% - 16px);
+
+  @media (max-width: map-get($breakpoints, desktop) - 1) {
+    width:  calc(50% - 16px);
+  }
+
+  @media (max-width: map-get($breakpoints, tablet) - 1) {
+    width:  calc(100% - 16px);
+  }
+
+  &.visible_item {
+    display: none;
+  }
+
+  .grid-item {
+    padding-top: 56.25%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .grid-item-overlay {
+    position:static;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background-color: $black;
+    flex-flow: column nowrap;
+    padding: 0px 16px;
+    color: $white !important;
+    line-height: 48px;
+  }
+}
+
+
+.html .grid-item-link.general-post-item {
+  .grid-item-overlay {
+    height: auto;
+  }
+}
+
+html .general-post-item {
+  margin: 8px 8px 48px 8px;
+  width:  calc(33.33% - 16px);
+  position: relative;
+  border-bottom: 2px solid $light-grey-color;
+
+  @media (max-width: map-get($breakpoints, desktop) - 1) {
+    width:  calc(50% - 16px);
+  }
+
+  @media (max-width: map-get($breakpoints, tablet) - 1) {
+    width:  calc(100% - 16px);
+  }
+
+  &.index-post-item {
+    width:  calc(50% - 16px);
+
+    @media (max-width: map-get($breakpoints, tablet) - 1) {
+      width:  calc(100% - 16px);
+    }
+  }
+
+  .post-item {
+    display: block;
+    padding-top: 56.25%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .post-item-overlay {
+      position: absolute;
+      width: 100%;
+      height:100%;
+      background-color: $primary-color;
+      opacity: 0.25;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &.visible_item {
+    display: none;
+  }
+
+  .post-item-content {
+    display: relative;
+    padding: 16px 16px 64px 16px;
+  }
+
+
+  .btn {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+.filter-toggle {
+  cursor: pointer;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+
+  .triangle {
+    margin-right: 16px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid $black;
+    transition: .5s ease;
+
+    &.triangle-down {
+     transform:rotate(-90deg);
+     transform-origin: 50% 40%;
+    }
+  }
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.filter-button-group {
+  display: none;
+  padding : 5px;
+  width: 100%;
+
+  .flex-container {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .btn.btn-lg.filter-button {
+    width: auto;
+    min-width: auto;
+    border-radius: 32px;
+    padding: 16px 24px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin: 0 0 16px 16px;
+    background-color: $white;
+    border-radius: 0;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    &.is-checked {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+/** Sort Button **/
+
+.sort-button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  .sort-button {
+    margin:0;
+    padding: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $white;
+    background-color: $secondary-color;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+
+    &.is-checked {
+      background-color: $primary-color;
+    }
+
+    &:first-child {
+      border-left: 1px solid $white;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-right: 1px solid $white;
+      border-left: none;
+    }
+
+
+  }
+}

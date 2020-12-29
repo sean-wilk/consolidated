@@ -1,0 +1,279 @@
+/**
+ * Basic typography style for copy text
+ */
+
+:root {
+	font-size: 16px;
+
+	@media (max-width: map-get($breakpoints, desktop) - 1) {
+		font-size: 12px;
+	}
+}
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	font-family: $text-font-stack;
+	font-size: 1rem;
+	background-color: $background-color;
+	color: $white;
+	font-weight: normal;
+	width: 100% !important;
+}
+
+a {
+	font-family: $text-font-stack;
+	text-decoration: none;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+strong {
+  font-weight: 700;
+}
+
+i, .i {
+	font-weight: 400i;
+}
+
+blockquote {
+  quotes: '\201c' '\201d';
+	margin: 0;
+}
+
+blockquote:before {
+  content: open-quote;
+}
+
+blockquote:after {
+  content: close-quote;
+}
+
+blockquote:before, blockquote:after {
+  display: inline-block;
+  vertical-align: bottom;
+  color: $primary-color;
+  font-size: 3rem;
+  top: .2rem;
+  position: relative;
+}
+
+html body {
+	.fw-light {
+		font-weight: 200;
+	}
+
+	.fw-regular {
+		font-weight: 400;
+	}
+
+	.fw-medium {
+		font-weight: 500;
+	}
+
+	.fw-semibold {
+		font-weight: 600;
+	}
+
+	.fw-bold {
+		font-weight: 700;
+	}
+
+	.secondary-color {
+		color: $secondary-color !important;
+	}
+
+	.dark-grey-color {
+		color: $dark-grey-color !important;
+	}
+}
+
+/* Site wide text */
+
+.content h1 {
+	font-family: $text-font-stack;
+	font-weight: 600;
+  line-height: 1.4;
+	letter-spacing: $header-letter-spacing;
+}
+
+.content h2 {
+	font-family: $text-font-stack;
+	font-weight: 600;
+  line-height: 1.4;
+	letter-spacing: $header-letter-spacing;
+}
+.content h3 {
+	font-family: $text-font-stack;
+	font-weight: 600;
+  line-height: 1.4;
+	letter-spacing: $header-letter-spacing;
+}
+
+.content h4 {
+	font-family: $text-font-stack;
+	font-weight: 400;
+  line-height: 1.4;
+	letter-spacing: $header-letter-spacing;
+}
+
+.content h5 {
+	font-family: $text-font-stack;
+	font-weight: 400;
+  line-height: 1.4;
+}
+
+.content h6 {
+	font-family: $text-font-stack;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.content p {
+	font-family: $text-font-stack;
+	font-weight: 400;
+  line-height: 1.4;
+}
+
+.content small {
+	font-family: $text-font-stack;
+	font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Responsive Font Size */
+
+.content {
+
+	.mega {
+		font-size: 3.6rem;
+		letter-spacing: $header-letter-spacing;
+	}
+
+	.jumbo {
+		font-size: 3rem;
+		letter-spacing: $header-letter-spacing;
+	}
+
+	h1 {
+		font-size: 2.25rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	h3 {
+		font-size: 1.375rem;
+	}
+
+	h4 {
+		font-size: 1.125rem;
+	}
+
+	h5 {
+		font-size: 1.0625rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	small {
+		font-size: 0.75rem;
+	}
+
+	.btn-lrg, .btn-sm, .btn-sm-white  {
+		font-size: 1.375rem;
+	}
+
+	.btn-outline {
+		font-size: 1.375rem;
+	}
+
+}
+
+body .content .header {
+	margin-bottom: 32px;
+}
+
+body .content .subheader {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.lh-2 {
+	line-height: 2 !important;
+}
+
+.lh-1-6 {
+	line-height: 1.6 !important;
+}
+
+.lh-1-2 {
+	line-height: 1.2 !important;
+}
+
+/**
+ * Background Rectangle Styling
+ */
+
+ .color-block-100w {
+	 position: relative;
+	 display: inline-block;
+
+   &.mega {
+		padding: 1rem 2.5rem;
+	 }
+
+	 &::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		background-color: $primary-color;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+	 }
+
+	 &.mega::after {
+		content: "";
+		height: 6.4rem;
+		top: 0;
+	 }
+}
+
+.color-block-header {
+	position: relative;
+	display: inline-block;
+	padding: 8px 24px;
+
+	&.mega {
+	 padding: 1rem 2.5rem;
+	}
+
+	&::after {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 content: "";
+	 background-color: $primary-color;
+	 height: 100%;
+	 width: 66%;
+	 z-index: -1;
+	}
+
+	&.mega::after {
+	 content: "";
+	 height: 6.4rem;
+	 top: 0;
+	}
+}

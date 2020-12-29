@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the hero section component.
+// -----------------------------------------------------------------------------
+
+.hero-section.home-hero {
+	background-repeat: no-repeat;
+	position: relative;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+	overflow: hidden;
+	height: 100vh;
+  width: 100vw;
+
+	@media (max-aspect-ratio: 16 / 9) {
+	  iframe, video.desktop-hero-video {
+      width: 400%;
+  		left: -150%;
+	  }
+
+	  iframe, video.mobile-hero-video {
+      height: 300% !important;
+      top: -100%;
+	  }
+
+  }
+
+	@media (min-aspect-ratio: 16 / 9) {
+	  iframe, video.desktop-hero-video {
+      height: 300% !important;
+      top: -100%;
+    }
+
+		iframe, video.mobile-hero-video {
+			width: 400%;
+			left: -150%;
+    }
+  }
+
+	iframe, video {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+	}
+
+	video.mobile-hero-video {
+		display: none !important;
+	}
+
+	video.desktop-hero-video {
+		display: block !important;
+	}
+
+	@media (max-width: map-get($breakpoints, desktop) - 1) {
+		video.mobile-hero-video {
+			display: block !important;
+		}
+
+		video.desktop-hero-video.has-mobile-video {
+			display: none !important;
+		}
+	}
+
+	@media (max-width: map-get($breakpoints, desktop) - 1) and (max-aspect-ratio: 9 / 16) {
+
+		height: auto;
+	  width: 100vw;
+		padding-top: 177.8%;
+
+		html video.mobile-hero-video {
+			height: auto !important;
+	    top: 0;
+		}
+
+	}
+}

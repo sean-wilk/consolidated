@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+	box-sizing: border-box;
+	overflow-x: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	body {
+		min-height: 100vh;
+		overflow-x: hidden;
+		#page {
+			min-height: 100vh;
+			display: flex;
+		  flex-direction: column;
+		  justify-content: space-between;
+
+			#primary {
+				flex-grow: 2;
+			}
+		}
+	}
+}
+
+#main, #main > section {
+	position: relative;
+	z-index: 1;
+}
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+/**
+ * Basic styles for links
+ */
+a {
+	color: $white;
+	text-decoration: none;
+	@include on-event {
+		color: $text-color;
+		text-decoration: underline;
+	}
+}
+
+body a:hover {
+	text-decoration: none;
+}
+/* Cursor Styling */
+.cursor::after {
+	content: '';
+	display: inline-block;
+	margin-left: 3px;
+	background-color: white;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+}
+
+h1.cursor::after {
+	height: 24px;
+	width: 13px;
+}
+
+p.cursor::after {
+	height: 13px;
+	width: 6px;
+}
+
+.white-bg-section {
+  background-color: $white;
+  color: $secondary-color;
+}
+
+.primary-bg-section {
+  background-color: $primary-color;
+}

@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the contact page template.
+// -----------------------------------------------------------------------------
+
+.contact-container {
+  margin: 64px 0;
+
+  .content-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

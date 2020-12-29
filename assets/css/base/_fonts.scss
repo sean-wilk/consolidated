@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 200;
+  font-display: auto;
+  src: url('#{$font-path}/Graphik-Light.woff2') format('woff2'),
+       url('#{$font-path}/Graphik-Light.woff') format('woff'),
+       url('#{$font-path}/Graphik-Light.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url('#{$font-path}/Graphik-Regular.woff2') format('woff2'),
+       url('#{$font-path}/Graphik-Regular.woff') format('woff'),
+       url('#{$font-path}/Graphik-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: auto;
+  src: url('#{$font-path}/Graphik-Medium.woff2') format('woff2'),
+       url('#{$font-path}/Graphik-Medium.woff') format('woff'),
+       url('#{$font-path}/Graphik-Medium.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: url('#{$font-path}/Graphik-Semibold.woff2') format('woff2'),
+       url('#{$font-path}/Graphik-Semibold.woff') format('woff'),
+       url('#{$font-path}/Graphik-Semibold.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: url('#{$font-path}/Graphik-Bold.woff2') format('woff2'),
+       url('#{$font-path}/Graphik-Bold.woff') format('woff'),
+       url('#{$font-path}/Graphik-Bold.ttf')  format('truetype');
+}

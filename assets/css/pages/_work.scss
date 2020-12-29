@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for work pages
+// -----------------------------------------------------------------------------
+
+.hero-section.work-hero .hero-container {
+  height: 640px;
+  min-height: 100%;
+}
+
+.video-container {
+  position: relative;
+  z-index: 1;
+  padding: 32px;
+
+  .video-content {
+    padding-top: 56.25%;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: map-get($breakpoints, desktop) - 1) {
+    background-color: #f0008b;
+    margin-top: 32px;
+    padding: 8px;
+  }
+
+  @media (min-width: map-get($breakpoints, desktop)) {
+    &::after {
+      position: absolute;
+      top: 0;
+      right: calc(100% - 50vw);
+      content: "";
+      background-color: #f0008b;
+      height: 100%;
+      width: 50vw;
+      z-index: -1;
+    }
+  }
+}
+
+.work-examples {
+  .examples-container {
+    padding: 64px 0;
+  }
+  .example-item {
+    margin-bottom: 32px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    .html-code {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding-top: 56.25%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

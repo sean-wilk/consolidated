@@ -1,0 +1,269 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page template.
+// -----------------------------------------------------------------------------
+.page-template-template-home {
+  #site-navigation {
+    position: absolute;
+  }
+}
+
+.home-statement {
+  padding: 128px 0 0 0;
+
+  .statement-content {
+    text-align: center;
+    padding-bottom: 48px;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position:absolute;
+      bottom: 16px;
+      left: 10%;
+      width: 80%;
+      height: 4px;
+      background-color: $primary-color;
+    }
+  }
+
+  .as-keywords {
+    display: flex;
+    flex-flow: row nowrap;
+    @media (max-width: map-get($breakpoints, tablet) - 1) {
+      flex-flow: column nowrap;
+    }
+    justify-content: center;
+    align-items: center;
+
+    .keyword {
+      font-size: 3.2rem;
+      margin: 0;
+
+      &.not-last {
+        margin-right: 1rem;
+      }
+    }
+
+    .trailing-elipsis {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      background-color: $primary-color;
+      margin-right: 1rem;
+    }
+
+  }
+}
+
+/*** Quotes Section ***/
+
+.quote-section {
+  background-color: $secondary-color;
+  color: $text-color;
+  padding: 70px 0;
+
+  .quotes-list {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    @media (max-width: map-get($breakpoints, desktop) - 1) {
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .quote-container {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 16px;
+
+      @media (max-width: map-get($breakpoints, desktop) - 1) {
+        margin: 32px 0;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .quote {
+      font-size: 18px;
+      letter-spacing: 0;
+      line-height: 28px;
+
+      @media (max-width: map-get($breakpoints, desktop) - 1) {
+        text-align: center;
+      }
+    }
+  }
+
+  .quote-from {
+    position: relative;
+    padding: 8px 16px;
+    margin-top: 32px;
+    background: linear-gradient(90deg, $primary-color 75%, $secondary-color 75%);
+    min-width: 192px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .person {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.featured-work {
+  height: 100vh;
+  min-height: 50vw;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: $text-color;
+  border-bottom: 8px solid $secondary-color;
+  position: relative;
+  z-index: 1;
+
+  .featured-work-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-color;
+    opacity: 0.2;
+  }
+
+  .featured-work-content {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+
+    .featured-work-text-link {
+      display: block;
+      position: absolute;
+      bottom: 64px;
+
+      .grid-item {
+        padding: 48px 0;
+        position: relative;
+
+
+        @media (max-width: map-get($breakpoints, tablet) - 1) {
+          padding: 16px 0;
+        }
+      }
+    }
+
+    .featured-work-cta-link {
+      display: block;
+      position: absolute;
+      bottom: 96px;
+
+      @media (max-width: map-get($breakpoints, tablet) - 1) {
+        display: none;
+      }
+
+      h3 {
+        margin: 0;
+        @include link-hover-animation();
+      }
+    }
+  }
+
+  &.left-aligned {
+    .featured-work-content {
+
+      .featured-work-text-link {
+        left: 0;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        .grid-item {
+          padding-right: 64px;
+
+          @media (max-width: map-get($breakpoints, tablet) - 1) {
+            padding-right: 32px;
+          }
+
+          &::after {
+            position: absolute;
+        		top: 0;
+        		left: calc(100% - 50vw);
+        		content: "";
+        		background-color: $primary-color;
+        		height: 100%;
+        		width: 50vw;
+        		z-index: -1;
+
+            @media (max-width: map-get($breakpoints, tablet) - 1) {
+              left: calc(100% - 66vw);
+          		width: 66vw;
+            }
+          }
+        }
+      }
+
+      .featured-work-cta-link {
+        right: 0;
+      }
+    }
+  }
+
+  &.right-aligned {
+    .featured-work-content {
+      .featured-work-text-link {
+        right: 0;
+
+        .grid-item {
+          padding-left: 64px;
+
+          @media (max-width: map-get($breakpoints, tablet) - 1) {
+            padding-left: 32px;
+          }
+
+          &::after {
+            position: absolute;
+        		top: 0;
+        		right: calc(100% - 50vw);
+        		content: "";
+        		background-color: $primary-color;
+        		height: 100%;
+        		width: 50vw;
+        		z-index: -1;
+
+            @media (max-width: map-get($breakpoints, tablet) - 1) {
+              right: calc(100% - 66vw);
+          		width: 66vw;
+            }
+          }
+        }
+      }
+
+      .featured-work-cta-link {
+        left: 0;
+      }
+    }
+  }
+}
+
+.home-work-grid {
+  padding: 80px 0;
+}
+
+@media all and (max-width: map-get($breakpoints, desktop) - 1) {
+  .quote-section .content p {
+    text-align: center;
+  }
+}

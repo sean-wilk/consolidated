@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.consolidated-footer {
+  background-color: $background-color;
+  padding: 48px 0;
+  width: 100%;
+
+  @media (max-width: map-get($breakpoints, tablet) - 1) {
+    .widget_media_image {
+      text-align: center;
+
+      img {
+        max-width: 240px;
+      }
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+
+    .widget_text .textwidget {
+      padding: 16px 0;
+
+      & > * {
+        text-align: center;
+      }
+    }
+
+    ul.menu {
+      justify-content: center !important;
+
+      li:last-child a {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .footer-cols {
+    padding: 0 16px;
+
+    p {
+      font-weight: 200;
+    }
+
+    h3.widget-title {
+      margin-top: 0;
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 32px;
+
+    .copyright-content {
+      text-align: left;
+
+      @media (max-width: map-get($breakpoints, tablet) - 1) {
+        text-align: center;
+        padding: 16px;
+      }
+    }
+
+    .go-digital-signature {
+      text-align: right;
+
+      @media (max-width: map-get($breakpoints, tablet) - 1) {
+        text-align: center;
+        padding: 16px;
+      }
+
+      a {
+        font-weight: 600;
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+
+}

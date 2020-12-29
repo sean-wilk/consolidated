@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the about page template.
+// -----------------------------------------------------------------------------
+
+.about-hero-container {
+  padding: 3rem 0 6rem 0;
+  .about-hero-text {
+    text-align: center;
+    span {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+#about-specialization {
+  padding: 4rem 0;
+}
+
+#contact-cta {
+  padding: 4rem 0;
+
+  .contact-cta-header {
+    text-align: center;
+  }
+
+  .cta-button-container > div {
+    text-align: center;
+  }
+
+  .cta-button {
+    background-color: $white;
+    color: $primary-color;
+    border-color: $white;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+      border-color: $white;
+    }
+  }
+
+  .cta-description a {
+    text-decoration: underline;
+  }
+
+}
