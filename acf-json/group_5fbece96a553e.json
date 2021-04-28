@@ -1,6 +1,6 @@
 {
     "key": "group_5fbece96a553e",
-    "title": "Contact Page - Map",
+    "title": "Map",
     "fields": [
         {
             "key": "field_5fbed106f57e1",
@@ -29,6 +29,13 @@
                 "operator": "==",
                 "value": "templates\/template-contact.php"
             }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/template-home.php"
+            }
         ]
     ],
     "menu_order": 40,
@@ -39,5 +46,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616754706
+    "modified": 1619642309
 }

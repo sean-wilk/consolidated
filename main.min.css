@@ -353,7 +353,7 @@ html .general-post-item .btn{position:absolute;bottom:0;left:0}
 .social-icons .social-icon i::before{font-size:32px}
 .social-icons .social-icon:hover{opacity:.5;text-decoration:none}
 .page-template-template-home #site-navigation{position:absolute}
-.home-statement{padding:128px 0 0 0}
+.home-statement{padding:96px 0}
 .home-statement .statement-content{text-align:center;padding-bottom:48px;position:relative}
 .home-statement .statement-content:after{content:"";display:block;position:absolute;bottom:16px;left:10%;width:80%;height:4px;background-color:#f0008b}
 .home-statement .as-keywords{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
@@ -386,6 +386,8 @@ html .general-post-item .btn{position:absolute;bottom:0;left:0}
 .featured-work.right-aligned .featured-work-content .featured-work-text-link .grid-item::after{position:absolute;top:0;right:calc(100% - 50vw);content:"";background-color:#f0008b;height:100%;width:50vw;z-index:-1}
 .featured-work.right-aligned .featured-work-content .featured-work-cta-link{left:0}
 .home-work-grid{padding:80px 0}
+.home-form{padding:64px 0}
+.home-form .form-content{max-width:640px;margin:0 auto;text-align:center}
 .about-hero-container{padding:3rem 0 6rem 0}
 .about-hero-container .about-hero-text{text-align:center}
 .about-hero-container .about-hero-text span{padding-left:1rem;padding-right:1rem}
