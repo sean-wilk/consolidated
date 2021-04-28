@@ -1,0 +1,43 @@
+{
+    "key": "group_5fc0f1b387bf5",
+    "title": "About Hero",
+    "fields": [
+        {
+            "key": "field_5fc0f1d1d9cec",
+            "label": "Hero Text",
+            "name": "about_hero_text",
+            "type": "textarea",
+            "instructions": "Text that appears at the top of the About page. To add pink background wrap the text where you wan it to appear with the below text:<br><br>\r\n\r\n&lt;span class=\"color-block-100w\"&gt;YOUR CONTENT HERE&lt;\/span&gt;",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/template-about.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616754686
+}

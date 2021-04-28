@@ -1,0 +1,62 @@
+{
+    "key": "group_5fbf8a0a90345",
+    "title": "Contact Page - Socials",
+    "fields": [
+        {
+            "key": "field_5fbf8e6826d3b",
+            "label": "Header",
+            "name": "contact_social_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fbf8a25af108",
+            "label": "Display Social Media Icons",
+            "name": "display_social_media_icons",
+            "type": "true_false",
+            "instructions": "Display Social Media icons set in \"Social Media Settings\" in the theme options menu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/template-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616754701
+}

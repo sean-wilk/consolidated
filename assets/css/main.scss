@@ -9,6 +9,7 @@
 // 2. Vendors
 @import
   'vendors/normalize',
+  'vendors/magnific-popup',
   'vendors/hamburgers';
 
 // 3. Base stuff
@@ -83,7 +84,9 @@
 // 5. Components
 @import
   'components/button',
+  'components/form',
   'components/herosection',
+  'components/popup',
   'components/post-grid',
   'components/social-icons';
 

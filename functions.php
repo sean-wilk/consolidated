@@ -140,7 +140,7 @@
 
   // Remove Option Tree Settings Menu
 
-  add_filter( 'ot_show_pages', '__return_false' );
+  //add_filter( 'ot_show_pages', '__return_false' );
 
   /**
   * Hide the ACF admin menu item.
@@ -194,38 +194,38 @@ function go_plugin_manager() {
         array(
     			'name'    => 'Advanced Custom Fields PRO',
     			'slug'    => 'advanced-custom-fields-pro',
-    			'version' => '5.8.7+',
+    			'version' => '5.9.3+',
     		),
         array(
-    			'name'    => 'Contact Form 7',
-    			'slug'    => 'contact-form-7',
-    			'version' => '5.1.6+',
+    			'name'    => 'Classic Editor',
+    			'slug'    => 'classic-editor',
+    			'version' => '1.6+',
     		),
     		array(
-    			'name'    => 'CJZ Functionality Plugin',
-    			'slug'    => 'cjz-functionality-plugin',
-    			'version' => '1.1.0+',
-    			'url'     => 'https://github.com/sean-wilk/cjz-functionality-plugin',
+    			'name'    => 'Consolidated Content Company - Custom Plugin',
+    			'slug'    => 'consolidated-functionality',
+    			'version' => '1.0.0+',
+    			'url'     => 'https://github.com/sean-wilk/consolidated-functionality',
     		),
         array(
-    			'name'    => 'MC4WP: Mailchimp for WordPress',
-    			'slug'    => 'mailchimp-for-wp',
-    			'version' => '4.7.5+',
+    			'name'    => 'OptionTree',
+    			'slug'    => 'option-tree',
+    			'version' => '2.7.3+',
     		),
         array(
     			'name'    => 'Safe SVG',
     			'slug'    => 'safe-svg',
-    			'version' => '1.9.8+',
+    			'version' => '1.9.9+',
     		),
         array(
     			'name'    => 'Yoast SEO',
     			'slug'    => 'wordpress-seo',
-    			'version' => '13.1+',
+    			'version' => '15.5+',
     		),
         array(
     			'name'    => 'ACF Content Analysis for Yoast SEO',
     			'slug'    => 'acf-content-analysis-for-yoast-seo',
-    			'version' => '2.3.0+',
+    			'version' => '3.0.1+',
     		),
     	));
 

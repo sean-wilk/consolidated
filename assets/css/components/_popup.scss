@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the popup component.
+// -----------------------------------------------------------------------------
+
+.mfp-bg {
+  background-color: $transparent;
+}
+
+.mfp-content {
+  max-width: 480px;
+  margin: 0 auto;
+
+  .mfp-close {
+    color: $white;
+  }
+}
+
+#contact-form-popup {
+  width: 100%;
+  text-align: center;
+  padding: 32px;
+  background-color: $primary-color;
+}

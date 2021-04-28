@@ -99,6 +99,12 @@ $j(document).ready(function () {
     });
   }
 });
+$j('#request-meeting-btn').magnificPopup({
+  items: {
+    src: '#contact-form-popup',
+    type: 'inline'
+  }
+});
 "use strict";
 
 var $j = jQuery.noConflict();

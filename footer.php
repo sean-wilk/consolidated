@@ -32,13 +32,6 @@
               <?php dynamic_sidebar('footer-col-3'); ?>
             </div>
           </div>
-          <div class="footer-bottom row-no-gutters">
-            <div class="copyright-content col-md-6 col-xs-12">
-              <?= $copyright_content ?>
-            </div>
-            <div class="go-digital-signature col-md-6 col-xs-12">
-              <?php _e('Website Proudly Designed and Developed by','go'); ?> <a href="http://wearego.digital">Go Digital</a>
-            </div>
           </div>
       </div>
   </footer>
