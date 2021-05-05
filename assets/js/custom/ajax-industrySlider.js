@@ -54,6 +54,7 @@ function industry_ajax_get(industry_slug) {
           $j(".back-main-btn").on("click", function (e) {
             e.preventDefault();
             $j("#industry-slider-container").hide();
+            $j("#main-slider-container").hide();
             $j("#industry-isotope-grid").show();
           });
 
