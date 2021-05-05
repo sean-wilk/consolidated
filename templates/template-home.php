@@ -18,7 +18,7 @@ get_header();
     <?php get_template_part('templates/components/home', 'statement'); ?>
     <?php //get_template_part('templates/components/home', 'quote'); ?>
     <?php //get_template_part('templates/components/home', 'featured-work'); ?>
-    <?php //get_template_part('templates/components/home', 'work-grid'); ?>
+    <?php get_template_part('templates/components/home', 'work-slider'); ?>
     <?php get_template_part('templates/components/home', 'form'); ?>
     <?php get_template_part('templates/components/general', 'map'); ?>
 

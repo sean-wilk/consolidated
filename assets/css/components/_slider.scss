@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the slider component.
+// -----------------------------------------------------------------------------
+
+.slick-slider .slick-prev, .slick-slider .slick-next {
+  background-color: $primary-color;
+  color: $white;
+  opacity: 1;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  &::before {
+    display: none;
+  }
+
+  i.fa {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+.slick-slider .slick-prev {
+  left: -40px;
+  @media (max-width: map-get($breakpoints, mobile) - 1) {
+    left: -16px;
+  }
+}
+
+.slick-slider .slick-next {
+  right: -40px;
+  @media (max-width: map-get($breakpoints, mobile) - 1) {
+    right: -16px;
+  }
+}
+
+#industry-slider, #industry-post-slider {
+  width: calc(100% - 80px);
+  margin: 0 auto;
+
+  @media (max-width: map-get($breakpoints, mobile) - 1) {
+    width: calc(100% - 32px);
+  }
+}

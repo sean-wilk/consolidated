@@ -10,7 +10,9 @@
 @import
   'vendors/normalize',
   'vendors/magnific-popup',
-  'vendors/hamburgers';
+  'vendors/hamburgers',
+  'vendors/slick',
+  'vendors/slick-theme';
 
 // 3. Base stuff
 @import
@@ -88,6 +90,7 @@
   'components/herosection',
   'components/popup',
   'components/post-grid',
+  'components/slider',
   'components/social-icons';
 
 // 6. Page-specific styles

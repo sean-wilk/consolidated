@@ -11,10 +11,20 @@
   $work_desktop_column_count = get_field("work_desktop_column_count");
   $work_mobile_column_count = get_field("work_mobile_column_count");
 
-  $desktop_count = 12/$work_desktop_column_count;
+  if($work_desktop_column_count != 0){
+    $desktop_count = 12/$work_desktop_column_count;
+  } else {
+    $desktop_count = 12;
+  }
+
   $desktop_grid_class = "col-md-" . $desktop_count;
 
-  $mobile_count = 12/$work_mobile_column_count;
+  if($work_mobile_column_count != 0){
+    $mobile_count = 12/$work_mobile_column_count;
+  } else {
+    $mobile_count = 12;
+  }
+
   $mobile_grid_class = "col-sm-" . $mobile_count;
 ?>
 

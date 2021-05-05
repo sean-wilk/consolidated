@@ -290,3 +290,184 @@ function bs_dequeue_dashicons() {
         wp_deregister_style( 'dashicons' );
     }
 }
+
+/**
+ * AJAX Query for Categories Post
+ */
+
+add_action( 'wp_ajax_nopriv_load-filter', 'prefix_load_industry_posts' );
+add_action( 'wp_ajax_load-filter', 'prefix_load_industry_posts' );
+function prefix_load_industry_posts () {
+  $industry_slug = $_POST[ 'industry' ];
+  $term = get_term_by('slug', $industry_slug, 'industries');
+  $industry_name = $term->name;
+
+  $args = array (
+    'tax_query' => array(
+        array(
+           'taxonomy' => 'industries',
+           'field' => 'slug',
+           'terms' => array( $industry_slug )
+        )
+    ),
+    'post_type'       => 'work',
+    'posts_per_page' => -1,
+    'ignore_sticky_posts' => 1,
+    'post_status' => 'publish',
+    'orderby' => 'desc',
+  );
+
+  $post_args = array (
+    'tax_query' => array(
+        array(
+           'taxonomy' => 'industries',
+           'field' => 'slug',
+           'terms' => array( $industry_slug )
+        )
+    ),
+    'meta_query' => array(
+        //'relation' => 'AND',
+        array(
+            'key'     => 'work_video',
+            'value'   => '',
+            'compare' => '!='
+        ),
+    ),
+    'post_type'       => 'work',
+    'posts_per_page' => -1,
+    'ignore_sticky_posts' => 1,
+    'post_status' => 'publish',
+    'orderby' => 'desc',
+  );
+
+  $industry_query = new WP_Query( $args );
+  $post_query = new WP_Query( $post_args );
+
+  ob_start ();
+  if ( $industry_query->have_posts() ) :?>
+  <div id="industry-slider-container" class="container-fluid white-bg-section">
+    <div class="container slider-title-section">
+      <div class="col-sm-9 col-xs-12">
+          <h1 class="color-block-header fw-bold work-grid-header secondary-color">
+            <?= $industry_name ?>
+          </h1>
+      </div>
+      <div class="col-sm-3 col-xs-12 hide-mobile">
+        <a id="back-btn" class="back-main-btn back-btn btn btn-primary btn-lg btn-xl" href="#">
+          <i class="fas fa-chevron-left"></i> Back
+        </a>
+      </div>
+    </div>
+    <div class="post-grid row-no-gutters industry-slider" id="industry-slider">
+      <?php
+      while ( $industry_query->have_posts() ) : $industry_query->the_post();
+          get_template_part( 'templates/components/work', 'post-item', array(
+            'type' => 'ajax-popup',
+          ));
+      endwhile;
+      ?>
+    </div>
+    <div class="col-xs-12 show-mobile">
+      <a id="back-btn" class="back-main-btn back-btn btn btn-primary btn-lg btn-xl" href="#">
+        <i class="fas fa-chevron-left"></i> Back
+      </a>
+    </div>
+  </div>
+  <?php if($post_query->have_posts()) { ?>
+  <div id="industry-post-slider-container" class="container" style="display: none;">
+    <div class="post-grid row-no-gutters industry-post-slider" id="industry-post-slider">
+      <?php
+      while ( $post_query->have_posts() ) : $post_query->the_post();
+        get_template_part( 'templates/components/video-summary', 'post-item');
+      endwhile;
+      ?>
+    </div>
+  </div>
+  <?php } ?>
+
+  <?php
+  endif;
+  wp_reset_postdata();
+
+  $response = ob_get_contents();
+  ob_end_clean();
+
+  echo $response;
+  die(1);
+}
+
+/**
+ * AJAX Query for Video Popup
+
+
+add_action( 'wp_ajax_nopriv_load-filter', 'prefix_load_post_video' );
+add_action( 'wp_ajax_load-filter', 'prefix_load_post_video' );
+function prefix_load_post_video () {
+  $industry_slug = $_POST[ 'industry' ];
+  $term = get_term_by('slug', $industry_slug, 'industries');
+  $industry_name = $term->name;
+
+  $post_args = array (
+    'tax_query' => array(
+        array(
+           'taxonomy' => 'industries',
+           'field' => 'slug',
+           'terms' => array( $industry_slug )
+        )
+    ),
+    'meta_query' => array(
+        //'relation' => 'AND',
+        array(
+            'key'     => 'work_video',
+            'value'   => '',
+            'compare' => '!='
+        ),
+    )
+    'post_type'       => 'work',
+    'posts_per_page' => -1,
+    'ignore_sticky_posts' => 1,
+    'post_status' => 'publish',
+    'orderby' => 'desc',
+  );
+
+  $query = new WP_Query( $args );
+  ob_start ();
+  if($video_url) { ?>
+    <div class="post-grid row-no-gutters industry-post-slider" id="industry-post-slider">
+      <?php
+      while ( $query->have_posts() ) : $query->the_post();
+        $work_video = get_field( 'work_video', $post_ID );
+      ?>
+      <div class="post-container">
+        <div class="container slider-title-section">
+          <div class="col-md-9 col-xs-12">
+              <h1 class="color-block-header fw-bold work-grid-header secondary-color">
+                <?php the_title(); ?>
+              </h1>
+          </div>
+          <div class="col-md-3 col-xs-12">
+            <a id="back-industry-btn" class="back-btn btn btn-primary btn-lg btn-xl" href="#">
+              <i class="fas fa-chevron-left"></i> Back
+            </a>
+          </div>
+        </div>
+        <div class="post-video-container">
+          <div class="post-video-content">
+            <?php echo($work_video); ?>
+          </div>
+        </div>
+      </div>
+      <?php
+      endwhile;
+      ?>
+    </div>
+  <?php }
+  wp_reset_postdata();
+
+  $response = ob_get_contents();
+  ob_end_clean();
+
+  echo $response;
+  die(1);
+}
+ */

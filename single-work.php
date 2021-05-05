@@ -24,7 +24,7 @@ get_header();
 		 	</div> <!-- .container -->
 			<?php get_template_part('templates/components/work', 'examples'); ?>
 			<section class='read-more-container'>
-				<a class="btn btn-outline read-more-link" href="/#work-grid">
+				<a class="btn btn-outline read-more-link" href="/work/">
 					<?php _e('Back To Work','go'); ?>
 				</a>
 			</section>

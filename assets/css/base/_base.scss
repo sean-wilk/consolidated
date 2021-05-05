@@ -86,3 +86,23 @@ p.cursor::after {
 .primary-bg-section {
   background-color: $primary-color;
 }
+
+@media (max-width: map-get($breakpoints, mobile) - 1) {
+  .hide-mobile {
+		display: none !important;
+	}
+
+	.show-mobile {
+		display: inherit !important;
+	}
+}
+
+@media (min-width: map-get($breakpoints, mobile) ) {
+  .hide-mobile {
+		display: inherit !important;
+	}
+
+	.show-mobile {
+		display: none !important;
+	}
+}
