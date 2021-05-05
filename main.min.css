@@ -454,7 +454,7 @@ html .general-post-item .btn{position:absolute;bottom:0;left:0}
 .industry-post-slider{display:none}
 .industry-post-slider .post-container .slider-title-section{padding-left:0;padding-right:0}
 .industry-post-slider .post-container .show-mobile .back-industry-btn{margin-left:0}
-.industry-post-slider .post-video-content{width:100%;padding-top:56.25%;max-width:640px;max-height:360px;position:relative}
+.industry-post-slider .post-video-content{width:100%;padding-top:56.25%;position:relative}
 .industry-post-slider .post-video-content iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 .about-hero-container{padding:3rem 0 6rem 0}
 .about-hero-container .about-hero-text{text-align:center}
