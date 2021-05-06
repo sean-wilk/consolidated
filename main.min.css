@@ -444,6 +444,7 @@ html .general-post-item .btn{position:absolute;bottom:0;left:0}
 .home-form{padding:64px 0}
 .home-form .form-content{max-width:640px;margin:0 auto;text-align:center}
 #industry-grid{display:relative;min-height:calc(200px + 1.34em + 18.75vw)}
+#industry-grid .grid-item-link .grid-item-overlay{text-align:center;font-size:28px;font-weight:600}
 #industry-grid .btn-lg.back-btn:hover{border:2px solid #f0008b}
 #industry-grid #industry-slider-container{position:relative;z-index:1}
 #industry-grid #main-slider-container{padding:40px 8px 80px 8px;position:relative;z-index:1}

@@ -53,6 +53,7 @@ if ($number_of_work_posts_to_load_on_click <= 0) {
 	        <?php } ?>
 				</div>
 			</section>
+			<?php get_template_part('templates/components/archive', 'featured-work'); ?>
 			<div id="work-grid" class="blog-index-wrapper">
 				<div class="container">
 					<div class="row">

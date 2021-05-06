@@ -282,6 +282,12 @@
   display: relative;
   min-height: calc(200px + 1.34em + 18.75vw);
 
+  .grid-item-link .grid-item-overlay {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
   .btn-lg.back-btn:hover {
     border: 2px solid $primary-color;
   }
