@@ -17,6 +17,9 @@
   * @return void
   */
 
+  $theme = wp_get_theme();
+  define('THEME_VERSION', $theme->Version);
+
  if ( ! function_exists( 'go_setup' ) ) :
  	/**
  	 * Sets up theme defaults and registers support for various WordPress features.
@@ -113,11 +116,11 @@
 
     function go_scripts_function() {
 
-      wp_enqueue_style( 'main', get_template_directory_uri() . '/main.min.css');
+      wp_enqueue_style( 'main', get_template_directory_uri() . '/main.min.css', [], THEME_VERSION, 'all');
 
-      wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), null, true);
+      wp_enqueue_script( 'vendor', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), THEME_VERSION, true);
 
-      wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), null, true);
+      wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), THEME_VERSION, true);
     }
 
 
